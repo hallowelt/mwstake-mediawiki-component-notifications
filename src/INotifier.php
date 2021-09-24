@@ -25,6 +25,12 @@ interface INotifier {
 	public function registerNotification( $key, $params );
 
 	/**
+	 * @param string $key
+	 * @return bool
+	 */
+	public function isNotificationRegistered( $key );
+
+	/**
 	 *
 	 * @param string $key
 	 */
