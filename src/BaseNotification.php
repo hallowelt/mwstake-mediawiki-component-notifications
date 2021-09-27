@@ -7,7 +7,7 @@ use Message;
 use Title;
 use User;
 
-class BaseNotification implements \BlueSpice\INotification {
+class BaseNotification implements INotification {
 	/**
 	 *
 	 * @var string
