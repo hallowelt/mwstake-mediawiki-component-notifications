@@ -12,7 +12,7 @@ define( 'MWSTAKE_MEDIAWIKI_COMPONENT_NOTIFICATIONS_VERSION', '1.0.0' );
 
 $GLOBALS['wgMessagesDirs']['MWStakeMediaWikiComponentNotifications'] = __DIR__ . '/i18n';
 
-$GLOBALS['mwsgNotificationsNotifierClass'] = [
+$GLOBALS['mwsgNotificationsNotifierSpec'] = [
 	'class' => \MWStake\MediaWiki\Component\Notifications\NullNotifier::class
 ];
 
