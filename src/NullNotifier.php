@@ -5,7 +5,7 @@ namespace MWStake\MediaWiki\Component\Notifications;
 /**
  * Generic no-op notifier
  */
-class NullNotifier implements \BlueSpice\INotifier {
+class NullNotifier implements INotifier {
 	public function init() {
 	}
 
@@ -34,6 +34,14 @@ class NullNotifier implements \BlueSpice\INotifier {
 
 	/**
 	 * @param string $key
+	 * @return bool
+	 */
+	public function isNotificationRegistered( $key ) {
+		return true;
+	}
+
+	/**
+	 * @param string $key
 	 */
 	public function unRegisterNotification( $key ) {
 	}
@@ -44,7 +52,7 @@ class NullNotifier implements \BlueSpice\INotifier {
 	 * @return NullNotification
 	 */
 	public function getNotificationObject( $key, $params ) {
-		return new \BlueSpice\NullNotification( $key, $params );
+		return new NullNotification( $key, $params );
 	}
 
 }
