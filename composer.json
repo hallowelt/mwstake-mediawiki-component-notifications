@@ -8,10 +8,29 @@
 			"email": "support@bluespice.com"
 		}
 	],
-	"repositories": [{
-		"type": "vcs",
-		"url": "./mwstake-mediawiki-component-bootstrapper"
-	}],
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "mwstake/mediawiki-component-bootstrapper",
+				"version": "dev-master",
+				"source": {
+					"url": "./mwstake-mediawiki-component-bootstrapper",
+					"type": "svn",
+					"reference": "master"
+				},
+				"autoload": {
+					"psr-4": {
+						"MWStake\\MediaWiki\\Component\\Bootstrapper\\": "src/",
+						"MWStake\\MediaWiki\\Component\\Bootstrapper\\Tests\\": "tests/"
+					},
+					"files": [
+						"bootstrap.php"
+					]
+				}
+			}
+		}
+	],
 	"require": {
 		"mwstake/mediawiki-component-bootstrapper": "dev-master"
 	},
