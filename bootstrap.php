@@ -10,10 +10,13 @@ if ( defined( 'MWSTAKE_MEDIAWIKI_COMPONENT_NOTIFICATIONS_VERSION' ) ) {
 
 define( 'MWSTAKE_MEDIAWIKI_COMPONENT_NOTIFICATIONS_VERSION', '1.0.0' );
 
-$GLOBALS['wgMessagesDirs']['MWStakeMediaWikiComponentNotifications'] = __DIR__ . '/i18n';
+MWStake\MediaWiki\ComponentLoader\Bootstrapper::getInstance()
+->register( 'notifications', function() {
+	$GLOBALS['wgMessagesDirs']['MWStakeMediaWikiComponentNotifications'] = __DIR__ . '/i18n';
 
-$GLOBALS['mwsgNotificationsNotifierSpec'] = [
-	'class' => \MWStake\MediaWiki\Component\Notifications\NullNotifier::class
-];
+	$GLOBALS['mwsgNotificationsNotifierSpec'] = [
+		'class' => \MWStake\MediaWiki\Component\Notifications\NullNotifier::class
+	];
 
-$GLOBALS['wgServiceWiringFiles'][] = __DIR__ . '/includes/ServiceWiring.php';
+	$GLOBALS['wgServiceWiringFiles'][] = __DIR__ . '/includes/ServiceWiring.php';
+} );
