@@ -35,7 +35,7 @@ interface INotification {
 	 * Whether mail for this notification should
 	 * be sent immediately regardless of user settings
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function sendImmediateEmail();
 
@@ -43,7 +43,7 @@ interface INotification {
 	 * Whether job queue should be used
 	 * to send this notification
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function useJobQueue();
 

@@ -8,10 +8,10 @@ if ( defined( 'MWSTAKE_MEDIAWIKI_COMPONENT_NOTIFICATIONS_VERSION' ) ) {
 	return;
 }
 
-define( 'MWSTAKE_MEDIAWIKI_COMPONENT_NOTIFICATIONS_VERSION', '2.0.1' );
+define( 'MWSTAKE_MEDIAWIKI_COMPONENT_NOTIFICATIONS_VERSION', '2.0.2' );
 
 MWStake\MediaWiki\ComponentLoader\Bootstrapper::getInstance()
-->register( 'notifications', function () {
+->register( 'notifications', static function () {
 	$GLOBALS['wgMessagesDirs']['MWStakeMediaWikiComponentNotifications'] = __DIR__ . '/i18n';
 
 	$GLOBALS['mwsgNotificationsNotifierSpec'] = [
