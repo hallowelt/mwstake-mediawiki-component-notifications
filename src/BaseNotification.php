@@ -40,13 +40,13 @@ class BaseNotification implements INotification {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $immediateEmail = false;
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $useJobQueue = true;
 
@@ -252,7 +252,7 @@ class BaseNotification implements INotification {
 			return $users;
 		}
 		foreach ( $res as $row ) {
-			$users [] = User::newFromId( $row->ug_user );
+			$users[] = User::newFromId( $row->ug_user );
 		}
 		return $users;
 	}

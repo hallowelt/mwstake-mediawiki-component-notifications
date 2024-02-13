@@ -9,6 +9,8 @@ use User;
  * Generic empty notification
  */
 class NullNotification implements INotification {
+
+	/** @var string */
 	protected $key;
 
 	/**

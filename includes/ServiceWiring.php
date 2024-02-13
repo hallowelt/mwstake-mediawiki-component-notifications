@@ -5,7 +5,7 @@ use MWStake\MediaWiki\Component\Notifications\INotifier;
 use MWStake\MediaWiki\Component\Notifications\NullNotifier;
 
 return [
-	'MWStakeNotificationsNotifier' => function ( MediaWikiServices $services ) {
+	'MWStakeNotificationsNotifier' => static function ( MediaWikiServices $services ) {
 		$spec = $GLOBALS['mwsgNotificationsNotifierSpec'];
 		$instance = $services->getObjectFactory()->createObject( $spec );
 		if ( !$instance instanceof INotifier ) {
