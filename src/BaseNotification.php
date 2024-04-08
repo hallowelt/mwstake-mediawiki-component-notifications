@@ -198,17 +198,19 @@ class BaseNotification implements INotification {
 	 * @param array $users
 	 */
 	protected function addAffectedUsers( $users ) {
+		$services = MediaWikiServices::getInstance();
+		$userFactory = $services->getUserFactory();
+		$pm = $services->getPermissionManager();
 		foreach ( $users as $user ) {
 			if ( is_numeric( $user ) ) {
-				$user = User::newFromId( intval( $user ) );
+				$user = $userFactory->newFromId( intval( $user ) );
 			}
 			if ( !( $user instanceof User ) ) {
 				continue;
 			}
-			if ( $user->isBlocked() ) {
+			if ( $user->getBlock() ) {
 				continue;
 			}
-			$pm = MediaWikiServices::getInstance()->getPermissionManager();
 			if ( $this->title instanceof Title && !$pm->userCan( 'read', $user, $this->title ) ) {
 				continue;
 			} elseif ( !$user->isAllowed( 'read' ) ) {
